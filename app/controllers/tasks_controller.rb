@@ -8,6 +8,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    puts @task
   end
 
   def create
@@ -21,6 +22,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    puts @task
     if @task.update_attributes(task_params)
       redirect_to root_path, notice: "Task was updated successfully!"
     else
